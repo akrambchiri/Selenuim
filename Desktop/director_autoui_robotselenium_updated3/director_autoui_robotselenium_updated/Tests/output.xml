@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.7.9 on win32)" generated="20210426 16:10:51.528" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="C:\Users\biak\Desktop\director_autoui_robotselenium_updated\Tests\main.robot">
+<kw name="Begin Web Test" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210426 16:10:51.869" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210426 16:10:51.869" endtime="20210426 16:10:53.113"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210426 16:10:53.113" endtime="20210426 16:10:53.222"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1600</arg>
+<arg>1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20210426 16:10:53.222" endtime="20210426 16:10:53.436"/>
+</kw>
+<status status="PASS" starttime="20210426 16:10:51.869" endtime="20210426 16:10:53.437"/>
+</kw>
+<test id="s1-t1" name="Capture graph customer level">
+<kw name="charger la page web" library="customer">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${DIRECTOR_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210426 16:10:53.438" level="INFO">Opening url 'https://10.1.20.4:4443/titan-ui/login.php'</msg>
+<status status="PASS" starttime="20210426 16:10:53.438" endtime="20210426 16:10:53.866"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=details-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:53.868" level="INFO">Clicking element 'id=details-button'.</msg>
+<status status="PASS" starttime="20210426 16:10:53.867" endtime="20210426 16:10:53.919"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=proceed-link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:53.920" level="INFO">Clicking element 'id=proceed-link'.</msg>
+<status status="PASS" starttime="20210426 16:10:53.919" endtime="20210426 16:10:55.904"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210426 16:10:55.904" endtime="20210426 16:10:55.916"/>
+</kw>
+<status status="PASS" starttime="20210426 16:10:53.438" endtime="20210426 16:10:55.916"/>
+</kw>
+<kw name="login customer level" library="customer">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>name=uname</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210426 16:10:55.917" endtime="20210426 16:10:55.952"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=uname</arg>
+<arg>${CUSTOMER_LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:55.953" level="INFO">Typing text 'admin@cust01.com' into text field 'name=uname'.</msg>
+<status status="PASS" starttime="20210426 16:10:55.952" endtime="20210426 16:10:56.022"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>name=passwd</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210426 16:10:56.022" endtime="20210426 16:10:56.057"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=passwd</arg>
+<arg>${NEW_CUSTOMER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:56.058" level="INFO">Typing text 'Admincust02!' into text field 'name=passwd'.</msg>
+<status status="PASS" starttime="20210426 16:10:56.058" endtime="20210426 16:10:56.124"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:56.125" level="INFO">Clicking element 'xpath=//*[@id="login"]'.</msg>
+<status status="PASS" starttime="20210426 16:10:56.124" endtime="20210426 16:10:58.899"/>
+</kw>
+<status status="PASS" starttime="20210426 16:10:55.917" endtime="20210426 16:10:58.900"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20210426 16:10:58.900" endtime="20210426 16:10:58.901"/>
+</kw>
+<kw name="open monitoring" library="customer">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=dwhpMenuCustomerMonitoring</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:10:58.903" level="INFO">Clicking element 'id=dwhpMenuCustomerMonitoring'.</msg>
+<status status="PASS" starttime="20210426 16:10:58.902" endtime="20210426 16:11:00.953"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Traffic Visibility</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210426 16:11:00.953" endtime="20210426 16:11:01.964"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=dwCustomerNetflowStat</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:01.964" level="INFO">Clicking element 'id=dwCustomerNetflowStat'.</msg>
+<status status="PASS" starttime="20210426 16:11:01.964" endtime="20210426 16:11:04.015"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Traffic Visibility</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210426 16:11:04.015" endtime="20210426 16:11:05.025"/>
+</kw>
+<status status="PASS" starttime="20210426 16:10:58.901" endtime="20210426 16:11:05.025"/>
+</kw>
+<kw name="define filter" library="customer">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=overlay_name</arg>
+<arg>Default</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210426 16:11:05.026" level="INFO">Selecting options from selection list 'id=overlay_name' by value Default.</msg>
+<status status="PASS" starttime="20210426 16:11:05.026" endtime="20210426 16:11:12.093"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>siteslistgraph</arg>
+<arg>Site1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210426 16:11:12.093" level="INFO">Selecting options from selection list 'siteslistgraph' by value Site1.</msg>
+<status status="PASS" starttime="20210426 16:11:12.093" endtime="20210426 16:11:18.154"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=apply_fltr</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:18.154" level="INFO">Clicking element 'id=apply_fltr'.</msg>
+<status status="PASS" starttime="20210426 16:11:18.154" endtime="20210426 16:11:20.208"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:05.026" endtime="20210426 16:11:20.208"/>
+</kw>
+<kw name="move to site graph" library="customer">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//*[@id="tabContent1"]/div[2]/div[1]/nav/ul/li[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:20.209" level="INFO">Clicking link 'xpath=//*[@id="tabContent1"]/div[2]/div[1]/nav/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210426 16:11:20.209" endtime="20210426 16:11:23.255"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:20.208" endtime="20210426 16:11:23.255"/>
+</kw>
+<kw name="take screenshot site bandwidthusage" library="customer">
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlay_bwusage_g"]/div</arg>
+<arg>../screeshots/customer_site_bandwidthusage_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:11:25.461" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_bandwidthusage_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_bandwidthusage_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:23.256" endtime="20210426 16:11:25.461"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:23.256" endtime="20210426 16:11:25.461"/>
+</kw>
+<kw name="take screenshot site wanlink" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_wanlinks</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:25.463" level="INFO">Clicking button 'id=btn_overlays_wanlinks'.</msg>
+<status status="PASS" starttime="20210426 16:11:25.462" endtime="20210426 16:11:30.521"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_wanlinks_g"]</arg>
+<arg>../screeshots/customer_site_wanlink_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:11:32.639" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_wanlink_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_wanlink_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:30.521" endtime="20210426 16:11:32.639"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:25.462" endtime="20210426 16:11:32.639"/>
+</kw>
+<kw name="take screenshot site topapplicationvolume" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_topapps</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:32.641" level="INFO">Clicking button 'id=btn_overlays_topapps'.</msg>
+<status status="PASS" starttime="20210426 16:11:32.640" endtime="20210426 16:11:37.700"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_topapps_g"]</arg>
+<arg>../screeshots/customer_site_topapplicationvolume_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:11:39.837" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_topapplicationvolume_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_topapplicationvolume_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:37.701" endtime="20210426 16:11:39.837"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:32.640" endtime="20210426 16:11:39.838"/>
+</kw>
+<kw name="take screenshot site topprotocolevolume" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_topdomain</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:39.839" level="INFO">Clicking button 'id=btn_overlays_topdomain'.</msg>
+<status status="PASS" starttime="20210426 16:11:39.839" endtime="20210426 16:11:44.901"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_topdomain_g"]</arg>
+<arg>../screeshots/customer_site_topprotocolevolume_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:11:47.051" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_topprotocolevolume_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_topprotocolevolume_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:44.901" endtime="20210426 16:11:47.051"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:39.838" endtime="20210426 16:11:47.052"/>
+</kw>
+<kw name="take screenshot site toplantakers" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_toptalkers</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:47.053" level="INFO">Clicking button 'id=btn_overlays_toptalkers'.</msg>
+<status status="PASS" starttime="20210426 16:11:47.053" endtime="20210426 16:11:52.135"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_toptalkers_g"]</arg>
+<arg>../screeshots/customer_site_toplantakers_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:11:54.267" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_toplantakers_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_toplantakers_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:52.135" endtime="20210426 16:11:54.268"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:47.052" endtime="20210426 16:11:54.268"/>
+</kw>
+<kw name="take screenshot site toplanlistemers" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_toplisteners</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:11:54.269" level="INFO">Clicking button 'id=btn_overlays_toplisteners'.</msg>
+<status status="PASS" starttime="20210426 16:11:54.269" endtime="20210426 16:11:59.341"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_toplisteners_g"]</arg>
+<arg>../screeshots/customer_site_toplanlisteners_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:12:01.478" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_toplanlisteners_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_toplanlisteners_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:11:59.341" endtime="20210426 16:12:01.478"/>
+</kw>
+<status status="PASS" starttime="20210426 16:11:54.268" endtime="20210426 16:12:01.479"/>
+</kw>
+<kw name="take screenshot site tcpthroughput" library="customer">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btn_overlays_tcpthroput</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210426 16:12:01.483" level="INFO">Clicking button 'id=btn_overlays_tcpthroput'.</msg>
+<status status="PASS" starttime="20210426 16:12:01.482" endtime="20210426 16:12:06.580"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="overlays_tcpthroput_g"]</arg>
+<arg>../screeshots/customer_site_tcpthroughput_screenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210426 16:12:08.776" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screeshots/customer_site_tcpthroughput_screenshot.png"&gt;&lt;img src="../screeshots/customer_site_tcpthroughput_screenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 16:12:06.581" endtime="20210426 16:12:08.776"/>
+</kw>
+<status status="PASS" starttime="20210426 16:12:01.481" endtime="20210426 16:12:08.777"/>
+</kw>
+<kw name="logout customer level" library="customer">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=userName</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 16:12:08.778" level="INFO">Clicking element 'id=userName'.</msg>
+<status status="PASS" starttime="20210426 16:12:08.778" endtime="20210426 16:12:10.846"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div[2]/div/nav/ul/li[1]/div/div[2]/a[2]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210426 16:12:10.846" level="INFO">Clicking link 'xpath=/html/body/div[1]/div/div[2]/div/nav/ul/li[1]/div/div[2]/a[2]'.</msg>
+<status status="PASS" starttime="20210426 16:12:10.846" endtime="20210426 16:12:18.766"/>
+</kw>
+<status status="PASS" starttime="20210426 16:12:08.777" endtime="20210426 16:12:18.766"/>
+</kw>
+<tag>test</tag>
+<status status="PASS" starttime="20210426 16:10:53.437" endtime="20210426 16:12:18.767"/>
+</test>
+<kw name="End Web Test" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210426 16:12:18.769" endtime="20210426 16:12:21.809"/>
+</kw>
+<status status="PASS" starttime="20210426 16:12:18.768" endtime="20210426 16:12:21.809"/>
+</kw>
+<status status="PASS" starttime="20210426 16:10:51.533" endtime="20210426 16:12:21.809"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
