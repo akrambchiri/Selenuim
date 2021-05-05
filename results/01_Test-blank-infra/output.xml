@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.7.9 on win32)" generated="20210426 13:47:52.663" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="C:\Users\biak\Desktop\director_autoui_robotselenium\01_Test-blank-infra\main.robot">
+<test id="s1-t1" name="blank infra">
+<kw name="blank devices" library="infra">
+<for flavor="IN RANGE">
+<var>${INDEX}</var>
+<value>1</value>
+<value>6</value>
+<iter>
+<var name="${INDEX}">1</var>
+<kw name="Log" library="BuiltIn">
+<arg>${INDEX}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:47:53.166" level="INFO">1</msg>
+<status status="PASS" starttime="20210426 13:47:53.166" endtime="20210426 13:47:53.166"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>22</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:47:53.167" level="INFO">${b} = 22</msg>
+<status status="PASS" starttime="20210426 13:47:53.166" endtime="20210426 13:47:53.167"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PORT}</var>
+<arg>${INDEX}${b}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:47:53.167" level="INFO">${PORT} = 122</msg>
+<status status="PASS" starttime="20210426 13:47:53.167" endtime="20210426 13:47:53.167"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${PORT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:47:53.167" level="INFO">122</msg>
+<status status="PASS" starttime="20210426 13:47:53.167" endtime="20210426 13:47:53.167"/>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<var>${index}</var>
+<arg>10.1.20.4</arg>
+<arg>port=${PORT}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<msg timestamp="20210426 13:47:53.168" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20210426 13:47:53.167" endtime="20210426 13:47:53.168"/>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<var>${output}</var>
+<arg>admin</arg>
+<arg>admin</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<msg timestamp="20210426 13:47:53.168" level="INFO">Logging into '10.1.20.4:122' as 'admin'.</msg>
+<msg timestamp="20210426 13:47:55.299" level="INFO">Read output: 
+admin connected from 10.0.133.23 using ssh on Site1
+[?7hSite1#</msg>
+<msg timestamp="20210426 13:47:55.299" level="INFO">${output} = 
+admin connected from 10.0.133.23 using ssh on Site1
+[?7hSite1#</msg>
+<status status="PASS" starttime="20210426 13:47:53.168" endtime="20210426 13:47:55.299"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>admin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210426 13:47:55.299" endtime="20210426 13:47:55.300"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:47:55.300" level="INFO">Executing command 'copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg'.</msg>
+<msg timestamp="20210426 13:47:55.600" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:47:55.300" endtime="20210426 13:47:55.600"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>restore factory-setting no-confirm</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:47:55.600" level="INFO">Executing command 'restore factory-setting no-confirm'.</msg>
+<msg timestamp="20210426 13:47:58.520" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:47:55.600" endtime="20210426 13:47:58.520"/>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" starttime="20210426 13:47:58.521" endtime="20210426 13:47:58.523"/>
+</kw>
+<status status="PASS" starttime="20210426 13:47:53.166" endtime="20210426 13:47:58.524"/>
+</iter>
+<iter>
+<var name="${INDEX}">2</var>
+<kw name="Log" library="BuiltIn">
+<arg>${INDEX}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:47:58.525" level="INFO">2</msg>
+<status status="PASS" starttime="20210426 13:47:58.525" endtime="20210426 13:47:58.526"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>22</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:47:58.527" level="INFO">${b} = 22</msg>
+<status status="PASS" starttime="20210426 13:47:58.526" endtime="20210426 13:47:58.527"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PORT}</var>
+<arg>${INDEX}${b}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:47:58.529" level="INFO">${PORT} = 222</msg>
+<status status="PASS" starttime="20210426 13:47:58.528" endtime="20210426 13:47:58.529"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${PORT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:47:58.530" level="INFO">222</msg>
+<status status="PASS" starttime="20210426 13:47:58.529" endtime="20210426 13:47:58.530"/>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<var>${index}</var>
+<arg>10.1.20.4</arg>
+<arg>port=${PORT}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<msg timestamp="20210426 13:47:58.533" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20210426 13:47:58.531" endtime="20210426 13:47:58.533"/>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<var>${output}</var>
+<arg>admin</arg>
+<arg>admin</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<msg timestamp="20210426 13:47:58.534" level="INFO">Logging into '10.1.20.4:222' as 'admin'.</msg>
+<msg timestamp="20210426 13:48:00.652" level="INFO">Read output: 
+admin connected from 10.0.133.23 using ssh on Site2
+[?7hSite2#</msg>
+<msg timestamp="20210426 13:48:00.653" level="INFO">${output} = 
+admin connected from 10.0.133.23 using ssh on Site2
+[?7hSite2#</msg>
+<status status="PASS" starttime="20210426 13:47:58.533" endtime="20210426 13:48:00.653"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>admin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210426 13:48:00.653" endtime="20210426 13:48:00.654"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:48:00.655" level="INFO">Executing command 'copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg'.</msg>
+<msg timestamp="20210426 13:48:00.970" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:48:00.655" endtime="20210426 13:48:00.970"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>restore factory-setting no-confirm</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:48:00.971" level="INFO">Executing command 'restore factory-setting no-confirm'.</msg>
+<msg timestamp="20210426 13:48:03.898" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:48:00.970" endtime="20210426 13:48:03.898"/>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" starttime="20210426 13:48:03.899" endtime="20210426 13:48:03.901"/>
+</kw>
+<status status="PASS" starttime="20210426 13:47:58.524" endtime="20210426 13:48:03.901"/>
+</iter>
+<iter>
+<var name="${INDEX}">3</var>
+<kw name="Log" library="BuiltIn">
+<arg>${INDEX}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:48:03.903" level="INFO">3</msg>
+<status status="PASS" starttime="20210426 13:48:03.902" endtime="20210426 13:48:03.903"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>22</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:48:03.904" level="INFO">${b} = 22</msg>
+<status status="PASS" starttime="20210426 13:48:03.904" endtime="20210426 13:48:03.905"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PORT}</var>
+<arg>${INDEX}${b}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:48:03.906" level="INFO">${PORT} = 322</msg>
+<status status="PASS" starttime="20210426 13:48:03.905" endtime="20210426 13:48:03.906"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${PORT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:48:03.907" level="INFO">322</msg>
+<status status="PASS" starttime="20210426 13:48:03.906" endtime="20210426 13:48:03.907"/>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<var>${index}</var>
+<arg>10.1.20.4</arg>
+<arg>port=${PORT}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<msg timestamp="20210426 13:48:03.909" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20210426 13:48:03.908" endtime="20210426 13:48:03.909"/>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<var>${output}</var>
+<arg>admin</arg>
+<arg>admin</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<msg timestamp="20210426 13:48:03.911" level="INFO">Logging into '10.1.20.4:322' as 'admin'.</msg>
+<msg timestamp="20210426 13:48:06.017" level="INFO">Read output: 
+admin connected from 10.0.133.23 using ssh on Site3
+[?7hSite3#</msg>
+<msg timestamp="20210426 13:48:06.017" level="INFO">${output} = 
+admin connected from 10.0.133.23 using ssh on Site3
+[?7hSite3#</msg>
+<status status="PASS" starttime="20210426 13:48:03.910" endtime="20210426 13:48:06.017"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>admin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210426 13:48:06.017" endtime="20210426 13:48:06.017"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:48:06.018" level="INFO">Executing command 'copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg'.</msg>
+<msg timestamp="20210426 13:48:06.317" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:48:06.018" endtime="20210426 13:48:06.317"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>restore factory-setting no-confirm</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20210426 13:48:06.318" level="INFO">Executing command 'restore factory-setting no-confirm'.</msg>
+<msg timestamp="20210426 13:48:09.242" level="INFO">Command exited with return code 0.</msg>
+<status status="PASS" starttime="20210426 13:48:06.318" endtime="20210426 13:48:09.243"/>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" starttime="20210426 13:48:09.243" endtime="20210426 13:48:09.246"/>
+</kw>
+<status status="PASS" starttime="20210426 13:48:03.901" endtime="20210426 13:48:09.246"/>
+</iter>
+<iter>
+<var name="${INDEX}">4</var>
+<kw name="Log" library="BuiltIn">
+<arg>${INDEX}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:48:09.248" level="INFO">4</msg>
+<status status="PASS" starttime="20210426 13:48:09.247" endtime="20210426 13:48:09.248"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>22</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:48:09.250" level="INFO">${b} = 22</msg>
+<status status="PASS" starttime="20210426 13:48:09.249" endtime="20210426 13:48:09.250"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PORT}</var>
+<arg>${INDEX}${b}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210426 13:48:09.251" level="INFO">${PORT} = 422</msg>
+<status status="PASS" starttime="20210426 13:48:09.250" endtime="20210426 13:48:09.251"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${PORT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210426 13:48:09.251" level="INFO">422</msg>
+<status status="PASS" starttime="20210426 13:48:09.251" endtime="20210426 13:48:09.251"/>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<var>${index}</var>
+<arg>10.1.20.4</arg>
+<arg>port=${PORT}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<msg timestamp="20210426 13:48:09.252" level="INFO">${index} = 4</msg>
+<status status="PASS" starttime="20210426 13:48:09.251" endtime="20210426 13:48:09.252"/>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<var>${output}</var>
+<arg>admin</arg>
+<arg>admin</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<msg timestamp="20210426 13:48:09.252" level="INFO">Logging into '10.1.20.4:422' as 'admin'.</msg>
+<msg timestamp="20210426 13:48:12.257" level="FAIL">timeout: timed out</msg>
+<status status="FAIL" starttime="20210426 13:48:09.252" endtime="20210426 13:48:12.257"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${output}</arg>
+<arg>admin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210426 13:48:12.257" endtime="20210426 13:48:12.257"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>copy /security/bsaStart.cfg /BSA/config/bsaStart.cfg</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="NOT RUN" starttime="20210426 13:48:12.257" endtime="20210426 13:48:12.257"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<arg>restore factory-setting no-confirm</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="NOT RUN" starttime="20210426 13:48:12.259" endtime="20210426 13:48:12.259"/>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="NOT RUN" starttime="20210426 13:48:12.259" endtime="20210426 13:48:12.259"/>
+</kw>
+<status status="FAIL" starttime="20210426 13:48:09.246" endtime="20210426 13:48:12.259"/>
+</iter>
+<status status="FAIL" starttime="20210426 13:47:53.166" endtime="20210426 13:48:12.259"/>
+</for>
+<status status="FAIL" starttime="20210426 13:47:53.166" endtime="20210426 13:48:12.259"/>
+</kw>
+<kw name="blank director" library="infra">
+<status status="NOT RUN" starttime="20210426 13:48:12.260" endtime="20210426 13:48:12.260"/>
+</kw>
+<kw name="blank controller" library="infra">
+<status status="NOT RUN" starttime="20210426 13:48:12.260" endtime="20210426 13:48:12.260"/>
+</kw>
+<status status="FAIL" starttime="20210426 13:47:53.165" endtime="20210426 13:48:12.261">timeout: timed out</status>
+</test>
+<status status="FAIL" starttime="20210426 13:47:52.668" endtime="20210426 13:48:12.262"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
