@@ -14,6 +14,6 @@ login
     partner.charger la page web
     partner.login partner level1
 
-Deploy overlay default mesh
+Deploy overlay default hs
     Set Selenium Speed    0.1s
     partner.deploy default hs overlay
